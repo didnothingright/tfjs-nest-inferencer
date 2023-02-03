@@ -10,7 +10,7 @@ import { YoloModule } from './modules/yolo/yolo.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: `.env` }),
-    YoloModule
+    ...(process.env.YOLO_MODEL_PATH ? [YoloModule] : [])
   ],
   controllers: [AppController],
   providers: [AppService],
