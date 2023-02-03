@@ -14,12 +14,6 @@ export class YoloService {
         const img = tf.tidy(() => {
             return tf.image.resizeBilinear(tensor, [width, height]).div(255.0).expandDims(0);
         });
-        
-        
-        this.model.executeAsync(img).then((r: tf.Tensor[]) => {
-            const [boxes, scores, classes] = r.slice(0, 3);
-            return [boxes.dataSync(), scores.dataSync(), classes.dataSync()];
-        })
 
         const predictions = await this.preprocess(img);
         tf.dispose();
@@ -44,7 +38,7 @@ export class YoloService {
             classes.dataSync()
         );
         this.logger.log(predictions);
-        return predictions
+        return predictions;
     }
 
 }
