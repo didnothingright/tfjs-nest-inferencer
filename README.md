@@ -1,6 +1,6 @@
 # Tensorflowjs Nest Inferencer
 
-This is a simple example of a proof of concept, implementing a REST API with NestJS.
+This is a simple proof of concept, implementing a REST API with NestJS.
 At the moment only YOLO prediction is supported. 
 
 ## Installation
