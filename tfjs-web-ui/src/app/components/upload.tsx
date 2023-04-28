@@ -9,7 +9,8 @@ interface Prediction {
   score: number;
 }
 
-const classes = ['fog'];
+//TODO: classes config
+const classes = ['INSERT YOUR CLASSES HERE'];
 
 function Upload(): JSX.Element {
   const [image, setImage] = useState<File | null>(null);
